@@ -1,0 +1,83 @@
+{
+  "env": {
+      "browser": true,
+      "commonjs": true,
+      "es2021": true,
+      "node": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+      "ecmaVersion": 12,
+      "sourceType": "module",
+      "ecmaFeatures": {
+          "jsx": true
+      }
+  },
+  "plugins": ["import"],
+  "rules": {
+      "indent": [
+          "error",
+          2, { "SwitchCase": 1 } 
+      ],
+      "linebreak-style": [
+          "error",
+          "windows"
+      ],
+      "quotes": [
+          "error",
+          "single"
+      ],
+      "semi": [
+          "error",
+          "always"
+      ],
+      "eqeqeq": [
+          "warn",
+          "always"
+      ],
+      "no-duplicate-imports": [
+          "error",
+          {"includeExports": true}
+      ],
+      // 如果一个变量不会被重新赋值，使用const生命
+      "prefer-const": [
+          "error", {
+              // descructuring any表示在解构中，任何变量都是const；all表示在解构中，所有变量都应该是const
+              "destructuring": "any",
+              "ignoreReadBeforeAssign": false
+          }],
+      // 中缀操作符周围有空格
+      "space-infix-ops": [
+          "error"
+      ],
+      // 禁用行尾空白
+      "no-trailing-spaces": [
+          "error", {
+              "ignoreComments": true
+      }],
+      // 函数圆括号之前有一个空格
+      "space-before-function-paren": [
+          "warn", 
+          {
+              "anonymous": "never",
+              "named": "always",
+              "asyncArrow": "always"
+          }
+      ],
+      // 禁止使用内敛注释
+      "no-inline-comments": "warn",
+      // 强制分号前后有空格
+      "semi-spacing": [
+          "error",
+          {"before": false, "after": true}
+      ],
+      "no-this-before-super": "error",
+      "object-shorthand": [
+          "error"
+      ],
+      "array-bracket-spacing": [
+          "error",
+          "never"
+      ]
+  }
+}
